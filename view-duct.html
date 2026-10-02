@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Interactive 3D duct designer · KJLabs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}</style>
+</head><body><div class="wrap"><div class="sheet">
+<nav class="dnav"><a href="index.html">← Back to overview</a><span class="pn"><a href="view-fea.html">CAD to stress, headless →</a></span></nav>
+<header class="dhead"><span class="label">Detail view · VIEW B1</span><h1>Interactive 3D duct designer</h1><p class="lede">Lay out a dust-collection system in 3D, one fitting at a time, starting from the filter or cyclone outlet. Each duct is sized as it is placed, and the losses carry their source.</p></header>
+<div class="dbody">
+<div class="hero-shot frame"><span class="tag">VIEW B1</span><img src="img/duct-full.jpg" alt="3D duct designer: cyclone, duct run with a wye branch, animated airflow, branch sizing panel"></div>
+<div class="cols"><div class="prose"><h2>What you are looking at</h2><p>A cyclone pre-separator with a straight trunk and a branch wye added on its left side. The glowing dots are a calculated airflow preview moving through the run in slow motion. It shows bulk flow and how velocity changes through bends and transitions. It is not a CFD or dust-particle simulation, and the screen says so.</p><p>The right-hand panel sizes the branch. It suggests a branch airflow that keeps dust moving at transport velocity, and the remainder carries on down the trunk. The loss model is named on screen (an ACGIH ventilation-manual table), so a reviewer can check it.</p><h2>How an engineer uses it</h2><p>Start a model by choosing target airflow, dust type and collector, then append straights, elbows with an editable centerline radius, reducers and wyes. The compass sets the next direction, including climbs and drops. Undo and redo cover every edit.</p><p>Pickups attach at the hoods. Their airflows add up through a family tree that shows CFM, velocity and velocity pressure for every duct, so an unbalanced branch is visible before anything is built. Layouts save and reload with every branch, wye and pickup intact, and the geometry exports for CFD or 3D printing.</p></div><aside class="side"><h2>Engineering built in</h2><ul><li><b>Transport velocity</b>: a warning when a branch is too slow to keep grain dust airborne</li><li><b>Cited losses</b>: fitting losses from ACGIH tables, shown with the table reference</li><li><b>Refuses to guess</b>: a fitting with no cited loss data is flagged as unresolved, not filled in</li><li><b>Validated</b>: within 3% on a redacted real two-pickup dust system (smooth-elbow method; per-component losses still differ)</li></ul></aside></div>
+<h2 style="font-size:var(--step-2);font-stretch:85%;text-transform:uppercase">More from this view</h2><div class="gallery"><figure><div class="frame"><img src="img/duct-start.jpg" alt="Initialize duct system model dialog with airflow, dust type, collector and outlet diameter" loading="lazy"></div><figcaption><p>Starting a model: target airflow, dust or material type, collector type and outlet diameter. The dialog checks transport velocity before the first duct is placed.</p></figcaption></figure></div>
+</div>
+<nav class="dnav"><a href="index.html">← Back to overview</a><span class="pn"><a href="view-fea.html">CAD to stress, headless →</a></span></nav>
+</div></div>
+
+</body></html>

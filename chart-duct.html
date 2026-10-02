@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Design a dust-collection run · KJLabs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}</style>
+</head><body><div class="wrap"><div class="sheet">
+<nav class="dnav"><a href="index.html">← Back to overview</a><span class="pn"><a href="chart-ecosystem.html">← The ecosystem</a><a href="chart-fea.html">From CAD part to stress plot →</a></span></nav>
+<header class="dhead"><span class="label">Flowchart · D2</span><h1>Design a dust-collection run</h1><p class="lede">The duct designer's workflow, from the collector outlet to a saved layout with cited losses.</p></header>
+<div class="dbody">
+<div class="legend" aria-label="Chart key">
+    <span><i style="border-color:#7c3aed;background:#ede9fe"></i>Start</span>
+    <span><i style="border-color:#2563eb;background:#dbeafe"></i>Engineer action</span>
+    <span><i style="border-color:#d97706;background:#fef3c7"></i>Decision</span>
+    <span><i style="border-color:#16a34a;background:#dcfce7"></i>Result</span>
+    <span><i style="border-color:#dc2626;background:#fee2e2"></i>Refuses to guess</span>
+  </div>
+<div class="chart-big"><pre class="mermaid">
+flowchart TD
+  S([Start at the filter or cyclone outlet]):::start --> A[Append straights, elbows, reducers]:::act
+  A --> W{Need a branch?}:::dec
+  W -->|yes| WY[Drop in a wye and pick its side and angle]:::act
+  WY --> SZ[Size the branch for transport velocity]:::act
+  SZ --> P[Attach pickups at each hood]:::act
+  W -->|no| P
+  P --> Q{Is each pickup's airflow known?}:::dec
+  Q -->|yes| FAM[Family tree totals CFM, FPM and velocity pressure per duct]:::res
+  Q -->|no| HELP[Airflow worksheet: displacement, entrainment, hood capture]:::act
+  HELP --> Q
+  FAM --> L{Is the fitting in a cited loss table?}:::dec
+  L -->|yes| LOSS[System loss with table reference]:::res
+  L -->|no| NC[Loss left unresolved and flagged]:::warn
+  LOSS --> SAVE[Save the layout or export geometry for CFD]:::res
+  classDef start fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#1e1b4b
+  classDef act fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#0f172a
+  classDef dec fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#422006
+  classDef res fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#052e16
+  classDef warn fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#450a0a
+</pre></div>
+<div class="cols"><div class="prose"><h2>Step by step</h2><ol class="steps"><li><b>Start at the outlet</b> of the filter or cyclone and append straights, elbows and reducers.</li><li><b>Add branches</b> with wyes. Pick the side and angle, and the branch is sized for transport velocity.</li><li><b>Attach pickups</b> at each hood. If a pickup's airflow is unknown, the worksheet works it out from displacement, entrainment and hood capture.</li><li><b>Family tree</b>: airflow, velocity and velocity pressure roll up for every duct.</li><li><b>Losses</b>: fittings covered by a cited loss table get a loss with its reference. Fittings that aren't are flagged unresolved.</li><li><b>Save or export</b> the layout, or export the geometry for CFD.</li></ol></div>
+<aside class="side"><h2>Why it is built this way</h2><p style="color:var(--muted)">Checked against a real job: within 3% on a redacted real two-pickup dust system (smooth-elbow method; per-component losses still differ). The caveat is shown with the result.</p></aside></div>
+</div>
+<nav class="dnav"><a href="index.html">← Back to overview</a><span class="pn"><a href="chart-ecosystem.html">← The ecosystem</a><a href="chart-fea.html">From CAD part to stress plot →</a></span></nav>
+</div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.15.0/mermaid.min.js" integrity="sha512-HH52omhHpZF6RfVnGiQwYgYm4H/ya2xsZYLl5xJ4+tLfX+rN4+8zF7V/H/KLeicPrKZYi1g6iBmVkk2AhXTGlg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>(function(){var d=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches;var t=document.documentElement.getAttribute("data-theme");if(t)d=t==="dark";if(window.mermaid)mermaid.initialize({startOnLoad:true,theme:d?"dark":"default",securityLevel:"strict"});})();</script>
+</body></html>

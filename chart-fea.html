@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>From CAD part to stress plot · KJLabs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}</style>
+</head><body><div class="wrap"><div class="sheet">
+<nav class="dnav"><a href="index.html">← Back to overview</a><span class="pn"><a href="chart-duct.html">← Design a dust-collection run</a><a href="chart-release.html">How a release ships →</a></span></nav>
+<header class="dhead"><span class="label">Flowchart · D3</span><h1>From CAD part to stress plot</h1><p class="lede">The structural pipeline, including the loop that sends you back to the log when a solve does not converge.</p></header>
+<div class="dbody">
+<div class="legend" aria-label="Chart key">
+    <span><i style="border-color:#7c3aed;background:#ede9fe"></i>Start</span>
+    <span><i style="border-color:#2563eb;background:#dbeafe"></i>Engineer action</span>
+    <span><i style="border-color:#d97706;background:#fef3c7"></i>Decision</span>
+    <span><i style="border-color:#16a34a;background:#dcfce7"></i>Result</span>
+    <span><i style="border-color:#dc2626;background:#fee2e2"></i>Refuses to guess</span>
+  </div>
+<div class="chart-big"><pre class="mermaid">
+flowchart LR
+  S([Part from Onshape, STEP or STL]):::start --> M[Choose material]:::act
+  M --> F{How are supports and loads placed?}:::dec
+  F -->|quick| AX[Axis band: min end fixed, max end loaded]:::act
+  F -->|precise| PK[Click real CAD faces or place round load patches]:::act
+  AX --> PV[Preview node counts]:::act
+  PK --> PV
+  PV --> MS[Mesh with Gmsh]:::act
+  MS --> SV[Solve with CalculiX]:::act
+  SV --> LOG{Did the solver log converge?}:::dec
+  LOG -->|yes| PNG[Rendered stress plot and saved example]:::res
+  LOG -->|no| FIX[Read the log, fix supports, mesh or material]:::warn
+  FIX --> MS
+  classDef start fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#1e1b4b
+  classDef act fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#0f172a
+  classDef dec fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#422006
+  classDef res fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#052e16
+  classDef warn fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#450a0a
+</pre></div>
+<div class="cols"><div class="prose"><h2>Step by step</h2><ol class="steps"><li><b>Bring in a part</b> from Onshape, STEP or STL and choose a material.</li><li><b>Place supports and loads</b>: the quick axis band, or real CAD faces and round load patches for precision.</li><li><b>Preview node counts</b> so a bad support or load is caught before solving.</li><li><b>Mesh with Gmsh and solve with CalculiX</b>, headless.</li><li><b>Check the solver log.</b> A converged run produces a rendered stress plot and a saved example. A failed run sends you back to fix supports, mesh or material based on what the log says.</li></ol></div>
+<aside class="side"><h2>Why it is built this way</h2><p style="color:var(--muted)">The rule is to read the log and never guess. A clean exit code alone isn't trusted. The pipeline checks convergence and checks that the physically expected fields are actually there.</p></aside></div>
+</div>
+<nav class="dnav"><a href="index.html">← Back to overview</a><span class="pn"><a href="chart-duct.html">← Design a dust-collection run</a><a href="chart-release.html">How a release ships →</a></span></nav>
+</div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.15.0/mermaid.min.js" integrity="sha512-HH52omhHpZF6RfVnGiQwYgYm4H/ya2xsZYLl5xJ4+tLfX+rN4+8zF7V/H/KLeicPrKZYi1g6iBmVkk2AhXTGlg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>(function(){var d=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches;var t=document.documentElement.getAttribute("data-theme");if(t)d=t==="dark";if(window.mermaid)mermaid.initialize({startOnLoad:true,theme:d?"dark":"default",securityLevel:"strict"});})();</script>
+</body></html>
