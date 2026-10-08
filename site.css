@@ -188,5 +188,11 @@ footer.foot b{font:600 .85rem/1.3 var(--mono);overflow-wrap:anywhere}
 .banner b{font-family:var(--display);font-stretch:85%;text-transform:uppercase;letter-spacing:.02em}
 .srcnote{font:400 .78rem/1.5 var(--mono);color:var(--muted)}
 .srcnote a{color:var(--duct)}
+.cta{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
+.cta a{display:inline-block;font:600 .8rem/1.2 var(--mono);color:var(--duct);text-decoration:none;
+  border:1px solid var(--duct);padding:9px 13px}
+.cta a:hover{background:var(--duct-soft)}
+.cta .secondary{border-color:var(--rule);color:var(--muted)}
+.cta .secondary:hover{background:var(--paper)}
 .dnav a[aria-current="page"]{color:var(--ink);border-bottom:2px solid var(--amber)}
 @media (max-width:860px){.cols{grid-template-columns:1fr}.side{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:18px}}
