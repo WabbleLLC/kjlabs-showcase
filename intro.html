@@ -148,7 +148,65 @@
 </section>
 
 <section>
-  <div class="sec-head"><span class="no">07</span><h2>How to read the rest of this briefing</h2></div>
+  <div class="sec-head"><span class="no">07</span><h2>How the three parts connect</h2>
+    <p>One picture of the whole idea: what is asked, what the tools compute, what gets checked, and what gets remembered.</p></div>
+  <div class="legend" aria-label="Chart key">
+    <span><i style="border-color:#7c3aed;background:#ede9fe"></i>Start</span>
+    <span><i style="border-color:#2563eb;background:#dbeafe"></i>Work the tools do</span>
+    <span><i style="border-color:#d97706;background:#fef3c7"></i>Decision</span>
+    <span><i style="border-color:#16a34a;background:#dcfce7"></i>Result that can be cited</span>
+    <span><i style="border-color:#dc2626;background:#fee2e2"></i>Refuses to guess</span>
+  </div>
+  <div class="chart-big"><pre class="mermaid">
+flowchart LR
+  JOB([A dust problem at a facility]):::start
+  ASK[Ask the engineering question]:::act
+  SIZE[Size the system in 3D at transport velocity]:::act
+  LOSS[Cited fitting losses, geometry exported]:::res
+  RULE{Checkable from the data on hand?}:::dec
+  PASS[Pass or fail with its citation]:::res
+  LIST[Inspection checklist for a procedural rule]:::res
+  NONE[Not computable: names the missing input]:::warn
+  REC[Record the decision and what is still open]:::act
+  MEM[(Searchable history for the next job)]:::res
+  JOB --> ASK
+  ASK --> SIZE
+  SIZE --> LOSS
+  LOSS --> RULE
+  RULE -->|yes| PASS
+  RULE -->|procedural| LIST
+  RULE -->|inputs missing| NONE
+  LOSS --> REC
+  PASS --> REC
+  REC --> MEM
+  classDef start fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#1e1b4b
+  classDef act fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#0f172a
+  classDef dec fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#422006
+  classDef res fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#052e16
+  classDef warn fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#450a0a
+  </pre></div>
+  <div class="caveat" style="margin-top:20px"><p><b>This is the business flow, not a claim about the software.</b>
+  It shows where a person decides, where a calculation happens, and where an answer has to carry its source. The
+  three outcomes on the right are the whole point: a check that cannot be made from the data on hand says so
+  instead of returning a number. The history at the end is what the next job starts from.</p></div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="no">08</span><h2>What it actually looks like</h2>
+    <p>Real screens from the working app. Sample geometry only; no customer data.</p></div>
+  <div class="gallery">
+    <figure><div class="frame"><img src="img/duct-full.jpg" alt="3D duct designer showing a cyclone, a duct run with a branch and the branch sizing panel" loading="lazy"></div>
+      <figcaption><p><b>The duct designer.</b> Lay out a run in 3D, size each branch for transport velocity, and read the fitting losses with the table they came from. <a href="view-duct.html">Open the full view &rarr;</a></p></figcaption></figure>
+    <figure><div class="frame"><img src="img/fea-full.jpg" alt="Von Mises stress plot on a gusseted bracket, deformed mesh over the undeformed shape" loading="lazy"></div>
+      <figcaption><p><b>CAD to stress, headless.</b> A STEP or Onshape part is meshed and solved, and the rendered plot comes straight from the solver's own result file. <a href="view-fea.html">Open the full view &rarr;</a></p></figcaption></figure>
+    <figure><div class="frame"><img src="img/airflow-full.jpg" alt="Duct airflow simulator with operating parameters, results tiles and a particle flow view" loading="lazy"></div>
+      <figcaption><p><b>The airflow quick check.</b> Velocity, velocity pressure, friction loss and residence time in seconds, with a warning when dust would settle out. <a href="view-airflow.html">Open the full view &rarr;</a></p></figcaption></figure>
+  </div>
+  <p class="srcnote" style="margin-top:16px">Five detail views and four flowcharts in total, all on the <a href="showcase.html">showcase page</a> and linked at the end of this one.</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="no">09</span><h2>How to read the rest of this briefing</h2></div>
   <div class="tablewrap"><table class="fit">
     <thead><tr><th>Page</th><th>What it answers</th></tr></thead>
     <tbody>
@@ -156,12 +214,23 @@
       <tr><td><a href="landscape.html">Market and competition</a></td><td>Who else is in this space, where the Midwest concentration is, and which business models a two-person team can actually start. <a href="landscape.html">Read →</a></td></tr>
       <tr><td><a href="research.html">University R&amp;D</a></td><td>A concrete proposal for joint research with Kansas State University and the University of Nebraska&ndash;Lincoln. <a href="research.html">Read →</a></td></tr>
       <tr><td><a href="plan.html">Illustrative plan</a></td><td>A framed example of how a plan would be structured. <b>Aspirational, not an actual plan.</b> <a href="plan.html">Read →</a></td></tr>
-      <tr><td><a href="showcase.html">The showcase</a></td><td>Real screens, flowcharts and the working detail behind every capability above. <a href="showcase.html">Open →</a></td></tr>
+      <tr><td><a href="showcase.html">The showcase</a></td><td>Real screens, all four flowcharts and the working detail behind every capability above. <a href="showcase.html">Open &rarr;</a></td></tr>
+      <tr><td>Detail views</td><td>The five screens in full, each with what it is, how an engineer uses it, and what it is not: <a href="view-duct.html">duct designer</a> &middot; <a href="view-fea.html">CAD to stress</a> &middot; <a href="view-cad.html">face selection</a> &middot; <a href="view-airflow.html">airflow quick check</a> &middot; <a href="view-vent.html">vent planning</a>.</td></tr>
+      <tr><td>Flowcharts</td><td>Four step-by-step walkthroughs: <a href="chart-ecosystem.html">the ecosystem</a> &middot; <a href="chart-duct.html">designing a duct run</a> &middot; <a href="chart-fea.html">CAD part to stress plot</a> &middot; <a href="chart-release.html">how a release ships</a>.</td></tr>
     </tbody>
   </table></div>
+  <div class="banner" style="margin-top:26px">
+    <span class="label">Last stop</span>
+    <b>See it working</b>
+    <p>These pages are the business case. If the advisor wants the engineering instead, the
+    <a href="showcase.html">showcase</a> is the place to start: real screens, the four flowcharts, and the limits
+    stated next to every claim. Nothing on the showcase is behind a login.</p>
+  </div>
 </section>
 
 </div>
 <nav class="dnav"><a href="showcase.html">← Back to overview</a><span class="pn"><a href="intro.html" aria-current="page">Introduction</a><a href="briefing.html">The idea in brief</a><a href="landscape.html">Market &amp; competition</a><a href="research.html">University R&amp;D</a><a href="plan.html">Illustrative plan</a></span></nav>
 </div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.15.0/mermaid.min.js" integrity="sha512-HH52omhHpZF6RfVnGiQwYgYm4H/ya2xsZYLl5xJ4+tLfX+rN4+8zF7V/H/KLeicPrKZYi1g6iBmVkk2AhXTGlg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>(function(){var d=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches;var t=document.documentElement.getAttribute("data-theme");if(t)d=t==="dark";if(window.mermaid)mermaid.initialize({startOnLoad:true,theme:d?"dark":"default",securityLevel:"strict"});})();</script>
 </body></html>
