@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>An engineering software business, built in the grain belt · KJLabs</title>
+<meta property="og:title" content="An engineering software business, built in the grain belt · KJLabs">
+<meta property="og:description" content="Public briefing material for KJLabs Simulators and CompliSpec: engineering simulation and code-compliance tools for grain handling and dust collection.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}</style>
+</head><body><div class="wrap"><div class="sheet">
+<nav class="dnav"><a href="showcase.html">← Back to overview</a><span class="pn"><a href="intro.html" aria-current="page">Introduction</a><a href="briefing.html">The idea in brief</a><a href="landscape.html">Market &amp; competition</a><a href="research.html">University R&amp;D</a><a href="plan.html">Illustrative plan</a></span></nav>
+<header class="dhead"><span class="label">Briefing · 01</span><h1>An engineering software business, built in the grain belt</h1><p class="lede">KJLabs builds tools for the people who design, check and run industrial dust-collection systems. This page is the short introduction: what we are working on, what genuinely exists today, what does not, and what we are asking a Kansas SBDC advisor to help us with.</p></header>
+<div class="dbody">
+
+<section>
+  <div class="sec-head"><span class="no">01</span><h2>What we are building</h2>
+    <p>Two working tools and one idea, all aimed at the same gap: the calculation and the evidence behind it live apart.</p></div>
+  <div class="why">
+    <div><span class="label">Tools</span><h3>KJLabs Simulators</h3>
+      <p>An interactive 3D duct designer for dust-collection systems, plus headless open-source structural and
+      flow solvers driven from CAD. Ducts are sized for transport velocity, and fitting losses carry the table
+      they came from. When the data for a fitting is missing, the tool leaves the value blank and flags it.</p></div>
+    <div><span class="label">Assurance</span><h3>CompliSpec</h3>
+      <p>Combustible-dust and grain-handling requirements stored as structured, per-jurisdiction records. A check
+      returns one of three honest outcomes: a pass or fail with its citation, an inspection checklist for a
+      procedural rule, or "not computable" with the missing inputs named.</p></div>
+    <div><span class="label">Memory</span><h3>Engineering operations journal</h3>
+      <p>A lightweight layer that captures what happened on a job in about ten to fifteen seconds, then reuses
+      that one entry for project history, open-loop tracking, search and lessons learned. It is deliberately not
+      a replacement for email or an ERP.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="no">02</span><h2>The problem, in three sourced facts</h2>
+    <p>Each of these is published elsewhere and cited here rather than asserted.</p></div>
+  <div class="why">
+    <div><span class="label">The hazard</span><h3>Grain dust still explodes</h3>
+      <p>In 2025 the U.S. still had 7 grain dust explosions, killing 4 people and injuring 10 (Purdue University),
+      including one each in Minnesota and Nebraska.</p></div>
+    <div><span class="label">The rulebook</span><h3>Codes differ by place</h3>
+      <p>OSHA 29 CFR 1910.272 sets the federal baseline for grain handling. State air, fire and licensure rules sit
+      on top of it and change from one state to the next, so a design that is defensible in one state is not
+      automatically defensible in the next.</p></div>
+    <div><span class="label">The practice</span><h3>Sizing still lives in spreadsheets</h3>
+      <p>Duct sizing, structural checks and code requirements are usually three separate tasks that meet again only
+      in a review meeting. The arithmetic is rarely the hard part; reconstructing the assumptions and the source is.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="no">03</span><h2>What exists today</h2>
+    <p>Working software, openly described on this site, with its limits stated next to each claim.</p></div>
+  <div class="tablewrap"><table class="fit">
+    <thead><tr><th>Capability</th><th>Status and where to see it</th></tr></thead>
+    <tbody>
+      <tr><td>3D duct designer</td><td>Working, pilot in use. Straights, elbows with editable centreline radius, reducers, wyes, valves and fans; branch sizing at transport velocity; cited fitting losses. <a href="view-duct.html">View B1 →</a></td></tr>
+      <tr><td>CAD to stress, headless</td><td>Working. STEP, STL or Onshape in, meshed and solved, rendered stress plot out. <a href="view-fea.html">View B2 →</a></td></tr>
+      <tr><td>CAD face selection</td><td>Working. Real CAD faces and round load patches, with node counts shown before a solve is spent. <a href="view-cad.html">View B3 →</a></td></tr>
+      <tr><td>Airflow and loss quick check</td><td>Working. Velocity, velocity pressure, friction loss, residence time, and a local flow solve for comparison. <a href="view-airflow.html">View B4 →</a></td></tr>
+      <tr><td>Explosion-vent planning view</td><td>Working as a planning aid. Illustrative, not a stamped design. <a href="view-vent.html">View B5 →</a></td></tr>
+      <tr><td>Requirements as code</td><td>Partly working. Minnesota's snow-load rule reaches a real pass/fail against a structural solve; Nebraska's elevator inspection rule renders as a checklist. Other jurisdictions are registers, not yet checks.</td></tr>
+      <tr><td>Validation</td><td>Validated within 3% on a redacted real two-pickup dust system (smooth-elbow method; per-component losses still differ). Solvers are validated against reference cases first. <a href="chart-release.html">How a release ships →</a></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="no">04</span><h2>What does not exist yet</h2>
+    <p>Stated plainly, because a plan built on a capability we do not have is worse than no plan.</p></div>
+  <div class="cols">
+    <div class="prose">
+      <h2>Not built</h2>
+      <p>There is no released engineering package: no arbitrary-layout CFD validation, no certified site design, no automatic fan selection, no finished bill of materials or ERP integration, and no manufacturing or compliance approval.</p>
+      <p>The duct designer's flow preview is a calculated bulk-flow picture, not a CFD or particle simulation. The solvers have been validated on reference fixtures; a fixture is not a customer's geometry.</p>
+      <p>The compliance checks only exist where a jurisdiction's rules have been encoded and verified. Where they have not, the system says so rather than guessing.</p>
+    </div>
+    <aside class="side">
+      <h2>Not claimed</h2>
+      <ul>
+        <li><b>No customers yet.</b> The pilot is internal and field-informed, not a paying deployment.</li>
+        <li><b>No revenue and no financial history.</b></li>
+        <li><b>No measured savings.</b> Build activity is not a productivity measurement.</li>
+        <li><b>No market-size figure</b> that we could not read at the source.</li>
+        <li><b>No certification</b> of any design, product or facility.</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="no">05</span><h2>Why this team</h2>
+    <p>The tools are built by the engineer who would use them, and checked against his own field work.</p></div>
+  <div class="cols">
+    <div class="prose">
+      <h2>Kevin J. Lund</h2>
+      <p>A manufacturing and mechanical engineer working in grain handling and dust collection. He sets the
+      engineering requirements, marks up each release, reviews the physics, and supplied the field job used to
+      check the duct losses. The tools are shaped around the way he actually designs.</p>
+      <h2>William B. Lund</h2>
+      <p>A software architect who designs the solver orchestration, the geometry engine and the compliance data
+      model. AI coding agents drive the solvers under one rule that has not been relaxed: an agent may write an
+      input deck and read a log, and may never invent a stress, a velocity or a convergence result.</p>
+    </div>
+    <aside class="side">
+      <h2>The working rule</h2>
+      <ul>
+        <li><b>Read the log, do not guess.</b> A clean exit code is not a result.</li>
+        <li><b>Cite or flag.</b> A number without a source is removed or labelled an estimate.</li>
+        <li><b>Redact real jobs.</b> Field work appears only in redacted form.</li>
+        <li><b>Keep the failures.</b> The record includes the approaches that did not work.</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="no">06</span><h2>What we are asking the Kansas SBDC</h2>
+    <p>SBDC is the Small Business Administration's resource-partner network: no-cost, confidential advising through centres hosted by universities and state organisations. Knowing what it is for is what makes a first meeting useful.</p></div>
+  <div class="cols">
+    <div class="prose">
+      <h2>What we are asking for, in order</h2>
+      <ol class="steps">
+        <li><b>Be our recommending support centre.</b> The Kansas SBIR/STTR matching programme requires applicants to be vetted and recommended through the FAST programme, a support centre, or a grant professional &mdash; and Kansas SBDC is a named partner in that programme, per the Kansas Department of Commerce programme page.</li>
+        <li><b>Point us at proposal support.</b> The Kansas FAST programme provides free proposal help. We want an introduction and an honest read on whether we are ready to submit.</li>
+        <li><b>Pressure-test fundability early.</b> The Kansas SBDC Capital Access Center offers loan-eligibility screening and mock-underwriting scenarios. Running that now, with no revenue, shows us what a lender would actually require.</li>
+        <li><b>Introduce the local innovation path.</b> The state proof-of-concept programme administered in Lawrence had a window we missed for this year. We want to know what a strong application would have looked like.</li>
+        <li><b>Help name the buyer.</b> We know the engineering problem and the practitioner. We do not yet know which role at a grain facility signs, which one blocks, and which one merely uses.</li>
+        <li><b>Tell us who else to talk to.</b> Specifically, who in Kansas has taken an NSF Project Pitch through to submission, because that is our first funding target.</li>
+      </ol>
+      <h2>What we will not ask for</h2>
+      <p>An SBDC does not lend money, does not invest, and does not write a business plan or negotiate on a company's behalf. We are not coming for capital or for someone else to do the work. We are coming for process knowledge, capital-market reality and referrals.</p>
+    </div>
+    <aside class="side">
+      <h2>What we bring</h2>
+      <ul>
+        <li><b>A working pilot,</b> demonstrated live rather than described.</li>
+        <li><b>Which standards and tables the software implements,</b> named and dated.</li>
+        <li><b>An honest financial picture:</b> no revenue, stated plainly.</li>
+        <li><b>What the capability does not do,</b> in the same document as what it does.</li>
+        <li><b>Our questions in writing,</b> so the meeting produces answers rather than topics.</li>
+      </ul>
+      <h2>And what stays off this site</h2>
+      <p class="srcnote">These pages are the public half of the story. Pricing, customer identities, financial projections, the compliance-record schema, fitting-loss data and solver configuration are not published here. We will label anything confidential in the room rather than assume it is protected.</p>
+    </aside>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="no">07</span><h2>How to read the rest of this briefing</h2></div>
+  <div class="tablewrap"><table class="fit">
+    <thead><tr><th>Page</th><th>What it answers</th></tr></thead>
+    <tbody>
+      <tr><td><a href="briefing.html">The idea in brief</a></td><td>What the three internal documents say, and what they add up to. <a href="briefing.html">Read →</a></td></tr>
+      <tr><td><a href="landscape.html">Market and competition</a></td><td>Who else is in this space, where the Midwest concentration is, and which business models a two-person team can actually start. <a href="landscape.html">Read →</a></td></tr>
+      <tr><td><a href="research.html">University R&amp;D</a></td><td>A concrete proposal for joint research with Kansas State University and the University of Nebraska&ndash;Lincoln. <a href="research.html">Read →</a></td></tr>
+      <tr><td><a href="plan.html">Illustrative plan</a></td><td>A framed example of how a plan would be structured. <b>Aspirational, not an actual plan.</b> <a href="plan.html">Read →</a></td></tr>
+      <tr><td><a href="showcase.html">The showcase</a></td><td>Real screens, flowcharts and the working detail behind every capability above. <a href="showcase.html">Open →</a></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+</div>
+<nav class="dnav"><a href="showcase.html">← Back to overview</a><span class="pn"><a href="intro.html" aria-current="page">Introduction</a><a href="briefing.html">The idea in brief</a><a href="landscape.html">Market &amp; competition</a><a href="research.html">University R&amp;D</a><a href="plan.html">Illustrative plan</a></span></nav>
+</div></div>
+</body></html>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Three working documents, and what they add up to · KJLabs</title>
+<meta property="og:title" content="Three working documents, and what they add up to · KJLabs">
+<meta property="og:description" content="Public briefing material for KJLabs Simulators and CompliSpec: engineering simulation and code-compliance tools for grain handling and dust collection.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}</style>
+</head><body><div class="wrap"><div class="sheet">
+<nav class="dnav"><a href="showcase.html">← Back to overview</a><span class="pn"><a href="intro.html">Introduction</a><a href="briefing.html" aria-current="page">The idea in brief</a><a href="landscape.html">Market &amp; competition</a><a href="research.html">University R&amp;D</a><a href="plan.html">Illustrative plan</a></span></nav>
+<header class="dhead"><span class="label">Briefing · 02</span><h1>Three working documents, and what they add up to</h1><p class="lede">A public synthesis of an origin narrative, a value-proposition review and a pilot proposal. The point of putting them side by side is that they describe one business, not three: tools that compute, checks that cite, and a record that remembers.</p></header>
+<div class="dbody">
+
+<section>
+  <div class="sec-head"><span class="no">01</span><h2>Where this synthesis comes from</h2>
+    <p>Three internal working drafts, none of them a customer commitment, a forecast or an approval.</p></div>
+  <div class="tablewrap"><table class="fit">
+    <thead><tr><th>Source document</th><th>What it is</th><th>What this page takes from it</th></tr></thead>
+    <tbody>
+      <tr><td>Origin narrative</td><td>A dated account of how the tools were actually built, written to preserve the failures and the corrections as well as the results.</td><td>The working method, and the argument that the method is the durable asset.</td></tr>
+      <tr><td>Value-proposition review</td><td>A job-function map of what would change for each role, deliberately separating current capability from work still to be built.</td><td>Who the tools touch, and what stays a human decision.</td></tr>
+      <tr><td>Engineering operations journal pilot proposal</td><td>A phase-one proposal to capture engineering events into searchable project history, with an explicit out-of-scope list.</td><td>The third product idea, and the discipline of a small pilot before scope grows.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="caveat"><p><b>Edited for public view.</b> Repository names, commit identifiers, internal file paths,
+  infrastructure detail, colleagues other than the two founders, customer identities and private correspondence
+  are not reproduced here. Sample job and customer labels in the pilot material are the source document's own
+  placeholders, not real records, and are not repeated on this page.</p></div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="no">02</span><h2>The origin, condensed</h2>
+    <p>Seven beats. The failures are kept because they are what produced the method.</p></div>
+  <div class="cols">
+    <div class="prose">
+      <h2>The beats</h2>
+      <ol class="steps">
+        <li><b>Make the engineering question runnable.</b> The first artifact was an inspectable harness &mdash; decks, wrappers, logs, rendering, smoke tests &mdash; not a confident answer from a model.</li>
+        <li><b>Discover that "it ran" is too weak.</b> One flow solver exited cleanly with the velocity still at exactly zero because the boundary names selected no intended groups. Completion and the expected fields have been checked separately ever since.</li>
+        <li><b>Make the setup understandable to the engineer.</b> CAD-to-solve, load patches, face selection and setup previews grew out of the engineer's own markups. His markups, not a summary of them, are the acceptance test.</li>
+        <li><b>Apply the evidence rule to requirements.</b> Requirements became dated, cited, machine-checkable records. A missing measurement stays "not computable" instead of being filled with a plausible number.</li>
+        <li><b>Expose the gaps between stages.</b> Handoff contracts, review gates and a combined record appeared; the complete approval workflow did not. Duplicate checks were found and consolidated, which is how the gaps became visible at all.</li>
+        <li><b>Put interactive math and geometry first.</b> A 3D builder and mechanics guides give an early review surface before anyone pays for a full simulation &mdash; and the difficult experiment stays visible rather than being quietly dropped.</li>
+        <li><b>Build toward a reviewed design record.</b> The proposed next gate is: review inputs, geometry and calculations, run the appropriate prepared case, preserve the evidence, check the cited requirements, obtain human review.</li>
+      </ol>
+    </div>
+    <aside class="side">
+      <h2>What the origin actually proves</h2>
+      <ul>
+        <li><b>The reusable asset is the loop</b> &mdash; prepare, run, inspect, correct &mdash; not any single model's answer.</li>
+        <li><b>Human judgment supplies the question</b>, the geometry, the operating assumptions, the interpretation and the acceptance criteria.</li>
+        <li><b>Faster drafting moves effort into verification.</b> That is an inference, not a measured productivity result.</li>
+        <li><b>Pictures and iteration counts do not prove a valid solution.</b> Only a checked result does.</li>
+      </ul>
+      <p class="small">The origin document states plainly that it establishes no project-wide cost, savings or speedup figure, and that commit activity is an activity proxy rather than a measurement.</p>
+    </aside>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="no">03</span><h2>The value proposition, condensed</h2>
+    <p>The review mapped seventeen job functions. Grouped, they make one argument: the tool changes what people can check, and leaves the decisions with people.</p></div>
+  <div class="tablewrap"><table class="fit">
+    <thead><tr><th>Function</th><th>What changes</th><th>What stays human</th></tr></thead>
+    <tbody>
+      <tr><td>Customer and facility operations</td><td>Inspect a common layout and the open questions, instead of interpreting disconnected descriptions.</td><td>Supplying reliable site information and accepting the agreed scope.</td></tr>
+      <tr><td>Sales, estimating and applications</td><td>Structured prompts and visible options make an engineering handoff more complete; an estimate is visibly separate from a commitment.</td><td>The commercial promise, the pricing and the risk allowance.</td></tr>
+      <tr><td>Design engineering</td><td>Choose the calculation or simulation appropriate to the question, with the assumptions retained beside the result.</td><td>Validating models, interpreting results and approving the design.</td></tr>
+      <tr><td>CAD, drafting and project management</td><td>Translate a reviewed layout into documents with fewer ambiguous handoffs; keep requests, revisions and approvals attached to the same job context.</td><td>Detail, tolerances, drawing quality, scope and schedule conflicts.</td></tr>
+      <tr><td>Compliance, safety and legal review</td><td>Keep applicability and evidence current through revisions, and make an evidence gap explicit rather than implicit.</td><td>Determining applicability and approving. A citation is not a certificate.</td></tr>
+      <tr><td>Purchasing, production, quality and field</td><td>Connect a vendor curve or a construction detail to the specific assumption that is still waiting on it.</td><td>Approving substitutions, owning master data, verifying fit and signing off release.</td></tr>
+      <tr><td>Leadership and finance</td><td>Decide with actual observations whether reduced rework justifies further development.</td><td>Allocating resources. Token counters measure computation, not labour.</td></tr>
+      <tr><td>IT, security and system owners</td><td>Connect approved tools without proliferating untracked copies.</td><td>Identity, access, retention, recovery and production-change authority.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="no">04</span><h2>The third document: an engineering operations journal</h2>
+    <p>A pilot proposal for the part of the problem that no solver touches &mdash; what the team knew, and when it knew it.</p></div>
+  <div class="why">
+    <div><span class="label">The problem</span><h3>Knowledge leaves with the project</h3>
+      <p>Project information is spread across mail, chat, transaction systems and folders. Open loops lose visibility, status is reconstructed in meetings, and the same question gets answered from memory.</p></div>
+    <div><span class="label">The rule</span><h3>The fifteen-second entry</h3>
+      <p>Adoption fails if capture takes longer than the workaround. One common interaction &mdash; deliverable sent, approval received, manufacturing question, drawing correction, problem found, job released &mdash; is designed to take ten to fifteen seconds.</p></div>
+    <div><span class="label">The payoff</span><h3>One entry, five uses</h3>
+      <p>A single entry updates project history, creates or closes an open loop, refreshes the dashboard, updates the search index, and creates the hook a future lesson-learned entry attaches to.</p></div>
+  </div>
+  <div class="cols" style="margin-top:28px">
+    <div class="prose">
+      <h2>What the pilot proposes</h2>
+      <p>A morning dashboard as the first screen of the day: open jobs, what is waiting on someone else, what is overdue, what is ready for release. A search that answers "have we seen this before?" from a job number in seconds rather than across four systems. A common lifecycle &mdash; open, active, waiting, blocked, closed, closeout &mdash; so engineering and the rest of the business share one vocabulary.</p>
+      <p>The scope discipline matters more than the feature list. The proposal puts email integration, transaction-system integration, ERP changes and automated mail parsing explicitly out of scope for phase one, and asks for a limited pilot on a small team with measured results before any expansion decision.</p>
+      <h2>Why it belongs with the other two</h2>
+      <p>The tools produce a result with its source attached. The journal produces the context around the result &mdash; who asked, what changed, what was decided and what is still open. Together they are the difference between a calculation and a defensible engineering record.</p>
+    </div>
+    <aside class="side">
+      <h2>Stated limits</h2>
+      <ul>
+        <li><b>A proposal, not a deployment.</b> No system is in production behind this page.</li>
+        <li><b>No savings measured.</b> The proposal claims compounding value over time, not hours saved on day one.</li>
+        <li><b>Not a replacement</b> for mail, chat or the transactional system of record.</li>
+        <li><b>No employer, system or customer is named</b> anywhere in this synthesis.</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="no">05</span><h2>What the three documents have in common</h2>
+    <p>Read together, they describe one thesis rather than three projects.</p></div>
+  <div class="rules">
+    <div><h3>Evidence discipline is the product</h3><p>Every number is tied to a cited table, a solver log, a dated requirement or a validation case. The refusal to invent a missing value is the feature, not a limitation.</p></div>
+    <div><h3>The record is what compounds</h3><p>A duct layout, a stress plot, a requirement check and a project history all become assets only when someone else can re-open them and see why the answer was what it was.</p></div>
+    <div><h3>Adoption beats completeness</h3><p>Ten to fifteen seconds to capture an event, or a quick-look answer during a phone call. A tool that is slower than the spreadsheet does not get used, however capable it is.</p></div>
+  </div>
+  <div class="caveat" style="margin-top:24px"><p><b>What this page does not claim.</b> No customers, revenue,
+  market size, product certification or measured savings are claimed here. The three documents are the authors'
+  own drafts; the origin, value and pilot material remains subject to correction by the people who did the work.</p></div>
+</section>
+
+</div>
+<nav class="dnav"><a href="showcase.html">← Back to overview</a><span class="pn"><a href="intro.html">Introduction</a><a href="briefing.html" aria-current="page">The idea in brief</a><a href="landscape.html">Market &amp; competition</a><a href="research.html">University R&amp;D</a><a href="plan.html">Illustrative plan</a></span></nav>
+</div></div>
+</body></html>

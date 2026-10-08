@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Where the demand is, and what people use instead · KJLabs</title>
+<meta property="og:title" content="Where the demand is, and what people use instead · KJLabs">
+<meta property="og:description" content="Public briefing material for KJLabs Simulators and CompliSpec: engineering simulation and code-compliance tools for grain handling and dust collection.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}</style>
+</head><body><div class="wrap"><div class="sheet">
+<nav class="dnav"><a href="showcase.html">← Back to overview</a><span class="pn"><a href="intro.html">Introduction</a><a href="briefing.html">The idea in brief</a><a href="landscape.html" aria-current="page">Market &amp; competition</a><a href="research.html">University R&amp;D</a><a href="plan.html">Illustrative plan</a></span></nav>
+<header class="dhead"><span class="label">Briefing · 03</span><h1>Where the demand is, and what people use instead</h1><p class="lede">A public view of the ground this work stands on: where the facilities are, what they use today, and which business a two-person engineering team can actually start. Figures we could not read at the source are marked rather than estimated.</p></header>
+<div class="dbody">
+
+<section>
+  <div class="sec-head"><span class="no">01</span><h2>Where the demand is concentrated</h2>
+    <p>The Midwest is not a marketing choice. It is where the facilities, the practitioners and the field data are.</p></div>
+  <div class="why">
+    <div><span class="label">The installed base</span><h3>Grain storage is concentrated</h3>
+      <p>Per USDA NASS, the U.S. had 7,844 off-farm grain storage facilities with 11.9 billion bushels of capacity
+      (Dec. 1, 2025). Kansas holds 685 of those facilities and 1.22 billion bushels &mdash; third in the country
+      behind Illinois and Iowa. Ten Midwest states account for 4,618 of the facilities and 8.09 billion bushels.
+      Kansas is third in off-farm capacity but only thirteenth on-farm, so its storage is overwhelmingly
+      commercial and professionally operated.</p></div>
+    <div><span class="label">The hazard</span><h3>The failures are recorded</h3>
+      <p>In 2024 there were 9 U.S. grain dust explosions with 2 injuries and no deaths, per Purdue University; its
+      ten-year tally is 86 explosions, 12 dead and 83 injured, 36 of them at grain elevators and 19 at feed mills.
+      In 2025 the U.S. still had 7 grain dust explosions, killing 4 people and injuring 10 (Purdue University),
+      including one each in Minnesota and Nebraska. Dust collection in these plants is a safety system, not a
+      convenience.</p></div>
+    <div><span class="label">The consequence</span><h3>Penalties are published</h3>
+      <p>OSHA 29 CFR 1910.272 sets the federal baseline for grain handling, mixing measurable thresholds with
+      procedural duties. A repeat or wilful violation carries a maximum of $165,514 after OSHA's 2026 penalty
+      adjustment, per the OSHA penalty memo. State air, fire and licensure rules sit on top of the federal
+      baseline and change from state to state.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="no">02</span><h2>Who else is in this space</h2>
+    <p>Named alternatives, with the price where the vendor publishes one. Prices move &mdash; treat these as anchors, not quotations.</p></div>
+  <div class="tablewrap"><table class="fit">
+    <thead><tr><th>Alternative</th><th>What it is</th><th>Published price</th><th>Why it is not this</th></tr></thead>
+    <tbody>
+      <tr><td>FluidFlow</td>
+        <td>A commercial steady-state flow-network solver for pipe and duct systems &mdash; the closest priced comparable we could find.</td>
+        <td>$5,950 to $14,990 per year, per the published price page.</td>
+        <td>A general network solver. It has no cited ACGIH fitting library, no dust-collection workflow, and no connection to a compliance record.</td></tr>
+      <tr><td>Ansys, COMSOL, SimScale</td>
+        <td>General-purpose CFD and FEA platforms, and the cloud simulation services built on them.</td>
+        <td>Quote-based. We could not read a published commercial list price for any of them.</td>
+        <td>Far more capability than the question needs, expert-operated, and slow to a first answer. Nothing about them is dust-collection-specific.</td></tr>
+      <tr><td>Airflow Sciences Corporation</td>
+        <td>An engineering services firm (Livonia, Michigan) doing industrial ventilation CFD with field validation &mdash; the most direct service-level competitor.</td>
+        <td>Quote only.</td>
+        <td>The right expertise, delivered as a project. The knowledge leaves with the engagement instead of staying with the plant, and cost scales with how often you ask.</td></tr>
+      <tr><td>QuickerSim</td>
+        <td>Sells customer-owned custom CFD applications rather than a subscription to its own tool.</td>
+        <td>Quote only.</td>
+        <td>It pre-empts part of a "we build your solver app" pitch. It does not touch rule logic or a compliance record.</td></tr>
+      <tr><td>SafetyCulture, Intelex, VelocityEHS, Cority</td>
+        <td>Environment, health and safety platforms: inspections, forms, corrective actions, audit trails.</td>
+        <td>SafetyCulture publishes $24 to $29 per seat per month, per its price page. The others quote.</td>
+        <td>They file the evidence a person types. They do not size a duct, apply a fitting loss, or evaluate a cited rule against a design.</td></tr>
+      <tr><td>Dust-collector manufacturers' own design tools</td>
+        <td>Free 3D layout and sizing tools given away to sell equipment.</td>
+        <td>Free.</td>
+        <td>Tied to one catalogue and one commercial interest. Useful, and not a neutral record of why a design is defensible.</td></tr>
+      <tr><td>Standards bodies' fitting data</td>
+        <td>Published fitting-loss coefficients and databases (for example the ASHRAE duct fitting database).</td>
+        <td>Not verified.</td>
+        <td>Data, not a workflow: the engineer still builds the calculation, the record and the review trail by hand.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2 style="font-size:var(--step-2);font-stretch:85%;text-transform:uppercase;margin-top:32px">And what a plant actually uses</h2>
+  <p style="color:var(--muted);margin:8px 0 18px">Mostly it is not other software. It is the spreadsheet, the vendor's own sizing sheet, and the consulting engineer who has seen it before.</p>
+  <div class="tablewrap"><table class="fit">
+    <thead><tr><th>What people use today</th><th>Where it works</th><th>Where it breaks</th></tr></thead>
+    <tbody>
+      <tr><td>Spreadsheets and rules of thumb</td>
+        <td>Fast for a single duct, familiar, free, and the person who built it understands it. The trade press says plainly that custom spreadsheets built on industry standards beat generic software for this work.</td>
+        <td>Fitting losses live in cells whose source is a memory. Nothing checks transport velocity across a whole system, and nobody else can reproduce the calculation a year later.</td></tr>
+      <tr><td>Equipment manufacturers' selection software</td>
+        <td>Authoritative for that manufacturer's own catalogue, and free to the specifier.</td>
+        <td>Tied to one vendor's products and published curves. It sizes equipment, not the system around it, and it is not a compliance record.</td></tr>
+      <tr><td>General-purpose CFD and FEA packages</td>
+        <td>Capable of far more than this problem needs, and trusted by reviewers when used correctly.</td>
+        <td>Expensive, expert-operated, slow to a first answer, and disconnected from the compliance question. The engineer builds the case, runs it and interprets it every time.</td></tr>
+      <tr><td>Simulation and design consultants</td>
+        <td>Deep expertise on demand, with no tooling to maintain.</td>
+        <td>Cost and turnaround per question, and the knowledge leaves with the engagement instead of staying with the plant.</td></tr>
+      <tr><td>Combustible-dust consultants and hazard-analysis providers</td>
+        <td>The recognised route to a defensible dust hazard analysis and its paperwork. No provider we found publishes a price, so every engagement starts with a quote.</td>
+        <td>Essential for the safety case, but they are not sizing the ductwork in the same pass, so the calculation and the evidence stay in separate documents.</td></tr>
+      <tr><td>Generic documentation and knowledge tools</td>
+        <td>Good at storing files, tickets and pages.</td>
+        <td>They do not understand a duct, a fitting loss or a cited requirement, so the engineering context has to be rebuilt by hand.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="no">03</span><h2>Why the gap is real, in three sentences</h2></div>
+  <div class="rules">
+    <div><h3>A result without a source is not usable</h3><p>Every number the tools produce carries the table, log or requirement it came from. Without that, an engineer cannot defend the answer in a review, so the answer gets redone by hand.</p></div>
+    <div><h3>Saying "not computable" is the feature</h3><p>Most tools return a number whether or not they have the inputs for it. This system returns a third outcome and names the missing input, which is what makes it safe near a compliance decision.</p></div>
+    <div><h3>The record is what compounds</h3><p>A layout, a solve and a requirement check are worth little if the next engineer cannot reopen them and see why the answer was what it was.</p></div>
+  </div>
+  <div class="caveat" style="margin-top:22px"><p><b>Two honest limits on that claim.</b> In our search we found no
+  product that stores grain-handling or combustible-dust requirements as machine-checkable, per-jurisdiction
+  records &mdash; that is a statement about our search, not a proof that nothing exists. And the regulator's own
+  rulebook is not machine-readable: OSHA publishes its combustible-dust enforcement directive as a PDF only, per
+  the directive page. Where the rules are not readable by a machine, a person has to re-read them every time.</p></div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="no">04</span><h2>Five ways this could make money</h2>
+    <p>Listed with what each requires, because a model a two-person team cannot start is not a plan.</p></div>
+  <div class="tablewrap"><table class="fit">
+    <thead><tr><th>Model</th><th>What it requires</th><th>First revenue</th><th>Main risk</th></tr></thead>
+    <tbody>
+      <tr><td>Engineering services first</td><td>The founders' own time, sold as duct design, validation and compliance-evidence work, with the software as the delivery tool.</td><td>Fastest. A defined scope can be quoted and invoiced without a finished product.</td><td>It is a job, not a business, unless the delivery work teaches the product what to become.</td></tr>
+      <tr><td>Per-seat or per-site software licence</td><td>A finished tool, support, and a reason to renew that survives the first project.</td><td>Slowest. Needs a proven workflow and someone willing to buy software from a two-person company.</td><td>Distribution, not the product, is the blocker: equipment makers already give away duct sizing and 3D layout tools, and engineering teams are small, so seats are few.</td></tr>
+      <tr><td>Compliance evidence as a service</td><td>Encoded, cited, current rules for named jurisdictions, plus an expert reviewer in the loop.</td><td>Moderate. Sold per facility or per review cycle.</td><td>Keeping rules current is recurring, unglamorous work, and being wrong has consequences. No provider in this field publishes a price, so the market has no visible anchor.</td></tr>
+      <tr><td>Licensing into equipment manufacturers</td><td>A manufacturer who wants a sizing tool for its own catalogue and its own specifiers.</td><td>Moderate to slow. One deal, long cycle, potentially the largest single contract.</td><td>The weakest of the five. Manufacturers already give design help away to sell equipment, and a compliance tool owned by a manufacturer is not credible as neutral.</td></tr>
+      <tr><td>Grant- and university-funded development</td><td>A research question worth funding, a university partner, and a proposal that survives review.</td><td>Slow, and it funds development rather than the business.</td><td>Grant money buys time, not customers. It is a bridge, not a market, and it lands on the funder's cycle rather than yours.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="caveat" style="margin-top:20px"><p><b>No model is chosen on this page.</b> Which one comes first is
+  exactly the question an advisor is useful for. Two of these can produce revenue inside a quarter &mdash;
+  engineering services, and a tightly scoped compliance gap assessment against a named requirement set &mdash;
+  because both sell work a facility already budgets for. A per-seat product business is not a first-quarter
+  revenue play.</p></div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="no">05</span><h2>Midwest, then national, then beyond</h2>
+    <p>Expansion in this field is not a marketing decision. Each jurisdiction is a separate body of work.</p></div>
+  <div class="cols">
+    <div class="prose">
+      <h2>Midwest first</h2>
+      <p>The facilities, the universities, the extension networks and the founders' own field experience are in the
+      same region. Pilots are reachable by car, which matters more than it sounds when the work involves walking a
+      plant and measuring a real duct run.</p>
+      <h2>United States second</h2>
+      <p>The federal baseline is shared, but state air, fire and licensure rules are not. National reach means
+      encoding rules jurisdiction by jurisdiction, and it means the structural and airflow capabilities have to hold
+      up outside grain milling: feed mills, ethanol plants, food processing and any bulk-material handling that
+      generates combustible dust. The ethanol sector alone runs 191 plants in the United States, 177 of them in the
+      central region that includes Kansas and Nebraska, per the U.S. Energy Information Administration.</p>
+      <h2>Outside the United States, later</h2>
+      <p>Other jurisdictions are their own body of work, and Europe shows why: the EU regulates explosion-risk
+      equipment and workplaces through two separate directives, applied across the member states' own national
+      systems. Canada mixes federal chemical-hazard rules with provincial occupational safety law, and Australia has
+      its own standard alongside state-adopted model law &mdash; all of it planned and not built, and none of it in
+      code. In each case the rule text, the evidence expected and the language all differ. We treat international work as <b>planned and not built</b>: no jurisdiction outside the
+      United States is encoded or claimed today, and expansion would be a deliberate programme rather than a
+      translation exercise.</p>
+    </div>
+    <aside class="side">
+      <h2>What we have not established</h2>
+      <ul>
+        <li><b>No software market size.</b> The market reports we found cover hardware and simulation services, not this. We have not read one at the source, so we quote none.</li>
+        <li><b>No hazard-analysis pricing.</b> Not one provider in this field publishes a price; every engagement starts with a quote.</li>
+        <li><b>No consulting rate anchor.</b> We have not verified what U.S. engineering consulting charges for this work.</li>
+        <li><b>No willingness-to-pay evidence.</b> Nobody has been asked to pay yet.</li>
+        <li><b>Our own validation number is not independently corroborated.</b> The closest published analogue we could find claims only agreement within its experimental uncertainty, so expect a technical buyer to probe ours.</li>
+        <li><b>No knowledge-loss figure.</b> The widely quoted percentage traces to an infographic whose method we could not read. We will not repeat it.</li>
+        <li><b>Solver licensing.</b> Some open-source solvers we use are copyleft, which may constrain how a closed product can be distributed. That needs counsel, not our own opinion.</li>
+      </ul>
+      <p class="srcnote">Where this page states a number it names the source in the same sentence. Where the
+      evidence was not available, the page says so instead of estimating &mdash; an advisor can help fill a gap,
+      but cannot fix a number that was invented.</p>
+    </aside>
+  </div>
+</section>
+
+</div>
+<nav class="dnav"><a href="showcase.html">← Back to overview</a><span class="pn"><a href="intro.html">Introduction</a><a href="briefing.html">The idea in brief</a><a href="landscape.html" aria-current="page">Market &amp; competition</a><a href="research.html">University R&amp;D</a><a href="plan.html">Illustrative plan</a></span></nav>
+</div></div>
+</body></html>
