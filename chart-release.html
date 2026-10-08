@@ -2,12 +2,17 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>How a release ships · KJLabs</title>
+<meta name="kjlabs-page" content="chart-release.html">
+<meta name="kjlabs-version" content="0.28.20">
+<meta name="kjlabs-page-hash" content="e9d4d05154d5">
+<meta name="kjlabs-built" content="2026-10-08">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
 <link rel="stylesheet" href="site.css">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}</style>
 </head><body><div class="wrap"><div class="sheet">
 <nav class="dnav"><a href="showcase.html">← Back to overview</a><span class="pn"><a href="chart-fea.html">← From CAD part to stress plot</a></span></nav>
+<!-- kjlabs:body:start -->
 <header class="dhead"><span class="label">Flowchart · D4</span><h1>How a release ships</h1><p class="lede">The engineering discipline behind every update: the engineer's own markup is the test, and every public number needs a source.</p></header>
 <div class="dbody">
 <div class="legend" aria-label="Chart key">
@@ -36,7 +41,9 @@ flowchart LR
 <div class="cols"><div class="prose"><h2>Step by step</h2><ol class="steps"><li><b>Start from the engineer's markup</b> or a field request, not a paraphrase of it.</li><li><b>Change the tool</b>, then run automated tests that check real geometry and the duct node graph, not just on-screen text.</li><li><b>Run truth checks</b>: every number on a public page must trace to a registered source.</li><li><b>Walk it live</b> the way the engineer actually clicks: build both sides of a run, branch mid-run, delete things.</li><li><b>Compare with the original markup.</b> Release with a changelog only when it matches.</li></ol></div>
 <aside class="side"><h2>Why it is built this way</h2><p style="color:var(--muted)">This process came out of a real failure. A run of releases passed every automated test, but they didn't do what the engineer expected, and an audit against his own markups found the underlying bug. Since then a passing test count doesn't count as proof that a release works.</p></aside></div>
 </div>
+<!-- kjlabs:body:end -->
 <nav class="dnav"><a href="showcase.html">← Back to overview</a><span class="pn"><a href="chart-fea.html">← From CAD part to stress plot</a></span></nav>
+<div class="pagestamp" role="contentinfo" title="Page revision, for before/after comparison"><span>chart-release.html</span><span>v0.28.20</span><span>e9d4d05154d5</span><span>2026-10-08</span></div>
 </div></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.15.0/mermaid.min.js" integrity="sha512-HH52omhHpZF6RfVnGiQwYgYm4H/ya2xsZYLl5xJ4+tLfX+rN4+8zF7V/H/KLeicPrKZYi1g6iBmVkk2AhXTGlg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>(function(){var d=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches;var t=document.documentElement.getAttribute("data-theme");if(t)d=t==="dark";if(window.mermaid)mermaid.initialize({startOnLoad:true,theme:d?"dark":"default",securityLevel:"strict"});})();</script>

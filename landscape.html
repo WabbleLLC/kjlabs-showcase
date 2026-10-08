@@ -4,12 +4,17 @@
 <title>Where the demand is, and what people use instead · KJLabs</title>
 <meta property="og:title" content="Where the demand is, and what people use instead · KJLabs">
 <meta property="og:description" content="Public briefing material for KJLabs Simulators and CompliSpec: engineering simulation and code-compliance tools for grain handling and dust collection.">
+<meta name="kjlabs-page" content="landscape.html">
+<meta name="kjlabs-version" content="0.28.20">
+<meta name="kjlabs-page-hash" content="b2fe21514e46">
+<meta name="kjlabs-built" content="2026-10-08">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
 <link rel="stylesheet" href="site.css">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}</style>
 </head><body><div class="wrap"><div class="sheet">
 <nav class="dnav"><a href="showcase.html">← Back to overview</a><span class="pn"><a href="intro.html">Introduction</a><a href="briefing.html">The idea in brief</a><a href="landscape.html" aria-current="page">Market &amp; competition</a><a href="research.html">University R&amp;D</a><a href="plan.html">Illustrative plan</a></span></nav>
+<!-- kjlabs:body:start -->
 <header class="dhead"><span class="label">Briefing · 03</span><h1>Where the demand is, and what people use instead</h1><p class="lede">A public view of the ground this work stands on: where the facilities are, what they use today, and which business a two-person engineering team can actually start. Figures we could not read at the source are marked rather than estimated.</p></header>
 <div class="dbody">
 
@@ -66,7 +71,7 @@
       <tr><td>Dust-collector manufacturers' own design tools</td>
         <td>Free 3D layout and sizing tools given away to sell equipment.</td>
         <td>Free.</td>
-        <td>Tied to one catalogue and one commercial interest. Useful, and not a neutral record of why a design is defensible.</td></tr>
+        <td>Tied to one catalog and one commercial interest. Useful, and not a neutral record of why a design is defensible.</td></tr>
       <tr><td>Standards bodies' fitting data</td>
         <td>Published fitting-loss coefficients and databases (for example the ASHRAE duct fitting database).</td>
         <td>Not verified.</td>
@@ -83,7 +88,7 @@
         <td>Fast for a single duct, familiar, free, and the person who built it understands it. The trade press says plainly that custom spreadsheets built on industry standards beat generic software for this work.</td>
         <td>Fitting losses live in cells whose source is a memory. Nothing checks transport velocity across a whole system, and nobody else can reproduce the calculation a year later.</td></tr>
       <tr><td>Equipment manufacturers' selection software</td>
-        <td>Authoritative for that manufacturer's own catalogue, and free to the specifier.</td>
+        <td>Authoritative for that manufacturer's own catalog, and free to the specifier.</td>
         <td>Tied to one vendor's products and published curves. It sizes equipment, not the system around it, and it is not a compliance record.</td></tr>
       <tr><td>General-purpose CFD and FEA packages</td>
         <td>Capable of far more than this problem needs, and trusted by reviewers when used correctly.</td>
@@ -92,7 +97,7 @@
         <td>Deep expertise on demand, with no tooling to maintain.</td>
         <td>Cost and turnaround per question, and the knowledge leaves with the engagement instead of staying with the plant.</td></tr>
       <tr><td>Combustible-dust consultants and hazard-analysis providers</td>
-        <td>The recognised route to a defensible dust hazard analysis and its paperwork. No provider we found publishes a price, so every engagement starts with a quote.</td>
+        <td>The recognized route to a defensible dust hazard analysis and its paperwork. No provider we found publishes a price, so every engagement starts with a quote.</td>
         <td>Essential for the safety case, but they are not sizing the ductwork in the same pass, so the calculation and the evidence stay in separate documents.</td></tr>
       <tr><td>Generic documentation and knowledge tools</td>
         <td>Good at storing files, tickets and pages.</td>
@@ -122,9 +127,9 @@
     <thead><tr><th>Model</th><th>What it requires</th><th>First revenue</th><th>Main risk</th></tr></thead>
     <tbody>
       <tr><td>Engineering services first</td><td>The founders' own time, sold as duct design, validation and compliance-evidence work, with the software as the delivery tool.</td><td>Fastest. A defined scope can be quoted and invoiced without a finished product.</td><td>It is a job, not a business, unless the delivery work teaches the product what to become.</td></tr>
-      <tr><td>Per-seat or per-site software licence</td><td>A finished tool, support, and a reason to renew that survives the first project.</td><td>Slowest. Needs a proven workflow and someone willing to buy software from a two-person company.</td><td>Distribution, not the product, is the blocker: equipment makers already give away duct sizing and 3D layout tools, and engineering teams are small, so seats are few.</td></tr>
+      <tr><td>Per-seat or per-site software license</td><td>A finished tool, support, and a reason to renew that survives the first project.</td><td>Slowest. Needs a proven workflow and someone willing to buy software from a two-person company.</td><td>Distribution, not the product, is the blocker: equipment makers already give away duct sizing and 3D layout tools, and engineering teams are small, so seats are few.</td></tr>
       <tr><td>Compliance evidence as a service</td><td>Encoded, cited, current rules for named jurisdictions, plus an expert reviewer in the loop.</td><td>Moderate. Sold per facility or per review cycle.</td><td>Keeping rules current is recurring, unglamorous work, and being wrong has consequences. No provider in this field publishes a price, so the market has no visible anchor.</td></tr>
-      <tr><td>Licensing into equipment manufacturers</td><td>A manufacturer who wants a sizing tool for its own catalogue and its own specifiers.</td><td>Moderate to slow. One deal, long cycle, potentially the largest single contract.</td><td>The weakest of the five. Manufacturers already give design help away to sell equipment, and a compliance tool owned by a manufacturer is not credible as neutral.</td></tr>
+      <tr><td>Licensing into equipment manufacturers</td><td>A manufacturer who wants a sizing tool for its own catalog and its own specifiers.</td><td>Moderate to slow. One deal, long cycle, potentially the largest single contract.</td><td>The weakest of the five. Manufacturers already give design help away to sell equipment, and a compliance tool owned by a manufacturer is not credible as neutral.</td></tr>
       <tr><td>Grant- and university-funded development</td><td>A research question worth funding, a university partner, and a proposal that survives review.</td><td>Slow, and it funds development rather than the business.</td><td>Grant money buys time, not customers. It is a bridge, not a market, and it lands on the funder's cycle rather than yours.</td></tr>
     </tbody>
   </table></div>
@@ -156,7 +161,7 @@
       systems. Canada mixes federal chemical-hazard rules with provincial occupational safety law, and Australia has
       its own standard alongside state-adopted model law &mdash; all of it planned and not built, and none of it in
       code. In each case the rule text, the evidence expected and the language all differ. We treat international work as <b>planned and not built</b>: no jurisdiction outside the
-      United States is encoded or claimed today, and expansion would be a deliberate programme rather than a
+      United States is encoded or claimed today, and expansion would be a deliberate program rather than a
       translation exercise.</p>
     </div>
     <aside class="side">
@@ -178,7 +183,9 @@
 </section>
 
 </div>
+<!-- kjlabs:body:end -->
 <nav class="dnav"><a href="showcase.html">← Back to overview</a><span class="pn"><a href="intro.html">Introduction</a><a href="briefing.html">The idea in brief</a><a href="landscape.html" aria-current="page">Market &amp; competition</a><a href="research.html">University R&amp;D</a><a href="plan.html">Illustrative plan</a></span></nav>
+<div class="pagestamp" role="contentinfo" title="Page revision, for before/after comparison"><span>landscape.html</span><span>v0.28.20</span><span>b2fe21514e46</span><span>2026-10-08</span></div>
 </div></div>
 
 </body></html>

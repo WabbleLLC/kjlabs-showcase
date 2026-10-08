@@ -2,12 +2,17 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The ecosystem · KJLabs</title>
+<meta name="kjlabs-page" content="chart-ecosystem.html">
+<meta name="kjlabs-version" content="0.28.20">
+<meta name="kjlabs-page-hash" content="5ab978f87497">
+<meta name="kjlabs-built" content="2026-10-08">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
 <link rel="stylesheet" href="site.css">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}</style>
 </head><body><div class="wrap"><div class="sheet">
 <nav class="dnav"><a href="showcase.html">← Back to overview</a><span class="pn"><a href="view-vent.html">← Explosion-vent planning view</a><a href="chart-duct.html">Design a dust-collection run →</a></span></nav>
+<!-- kjlabs:body:start -->
 <header class="dhead"><span class="label">Flowchart · D1</span><h1>The ecosystem</h1><p class="lede">How the parts fit together: what comes in, which tools and solvers handle it, and how CompliSpec turns results into a requirement check.</p></header>
 <div class="dbody">
 <div class="legend" aria-label="Chart key">
@@ -60,7 +65,9 @@ flowchart LR
 <div class="cols"><div class="prose"><h2>Step by step</h2><ol class="steps"><li><b>Inputs</b>: CAD from Onshape, STEP or STL; field markups and site notes; or an AI design chat that becomes a 3D model.</li><li><b>KJLabs Simulators</b>: the FEA pipeline, 3D duct designer, airflow and loss simulator, and the fan and cyclone quick-look.</li><li><b>Open-source solvers</b>: four structural codes and two CFD codes run headless, each validated on a reference case first.</li><li><b>CompliSpec</b>: results and duct layouts are checked against requirements stored as code, one jurisdiction at a time.</li><li><b>Three honest outcomes</b>: a pass or fail with its source, an inspection checklist for procedural rules, or not computable with the missing inputs named.</li></ol></div>
 <aside class="side"><h2>Why it is built this way</h2><p style="color:var(--muted)">Most engineering tools give an answer whether or not they have the inputs for it. This system has a third outcome on purpose. When a rule can't be checked from the data available, it says so and names what is missing. That makes it safe to use for compliance work.</p></aside></div>
 </div>
+<!-- kjlabs:body:end -->
 <nav class="dnav"><a href="showcase.html">← Back to overview</a><span class="pn"><a href="view-vent.html">← Explosion-vent planning view</a><a href="chart-duct.html">Design a dust-collection run →</a></span></nav>
+<div class="pagestamp" role="contentinfo" title="Page revision, for before/after comparison"><span>chart-ecosystem.html</span><span>v0.28.20</span><span>5ab978f87497</span><span>2026-10-08</span></div>
 </div></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.15.0/mermaid.min.js" integrity="sha512-HH52omhHpZF6RfVnGiQwYgYm4H/ya2xsZYLl5xJ4+tLfX+rN4+8zF7V/H/KLeicPrKZYi1g6iBmVkk2AhXTGlg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>(function(){var d=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches;var t=document.documentElement.getAttribute("data-theme");if(t)d=t==="dark";if(window.mermaid)mermaid.initialize({startOnLoad:true,theme:d?"dark":"default",securityLevel:"strict"});})();</script>

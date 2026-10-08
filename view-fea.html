@@ -2,19 +2,26 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>CAD to stress, headless · KJLabs</title>
+<meta name="kjlabs-page" content="view-fea.html">
+<meta name="kjlabs-version" content="0.28.20">
+<meta name="kjlabs-page-hash" content="64206db9fe84">
+<meta name="kjlabs-built" content="2026-10-08">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
 <link rel="stylesheet" href="site.css">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}</style>
 </head><body><div class="wrap"><div class="sheet">
 <nav class="dnav"><a href="showcase.html">← Back to overview</a><span class="pn"><a href="view-duct.html">← Interactive 3D duct designer</a><a href="view-cad.html">Pick the faces, not a guess →</a></span></nav>
+<!-- kjlabs:body:start -->
 <header class="dhead"><span class="label">Detail view · VIEW B2</span><h1>CAD to stress, headless</h1><p class="lede">A part goes from CAD to a rendered stress plot without anyone opening a GUI. The mesh, the solve and the render are all scripted, and the solver's own log decides whether the answer stands.</p></header>
 <div class="dbody">
-<div class="hero-shot frame"><span class="tag">VIEW B2</span><img src="img/fea-full.jpg" alt="Von Mises stress contour on an L bracket with a gusset, deformed mesh over the grey undeformed shape"></div>
-<div class="cols"><div class="prose"><h2>What you are looking at</h2><p>A gusseted angle bracket under load. Colors are von Mises stress. The grey shape is the undeformed part and the colored mesh is the deformed part, exaggerated so the motion is visible. The mesh edges are drawn on purpose, so a reviewer can judge whether the mesh is fine enough where the stress is high.</p><p>The image is rendered off-screen by a script straight from the solver's result file. Nothing in it is drawn by hand.</p><h2>The pipeline</h2><p>Geometry comes from Onshape, a STEP file or an STL. Gmsh builds a tetrahedral mesh. CalculiX solves it, and PyVista renders the result. The engineer picks the material, the fixed faces, the loaded faces and the load direction, either by axis band or by clicking real CAD faces.</p><p>The same orchestration drives Code_Aster, Elmer and FreeFEM for structural work and OpenFOAM and Code_Saturne for flow. Each was run on a known reference case first: a published Code_Aster benchmark, a FreeFEM cantilever compared with beam theory, and the standard OpenFOAM pitzDaily tutorial.</p></div><aside class="side"><h2>Rules the pipeline follows</h2><ul><li><b>Read the log</b>: convergence is checked in the solver log, not assumed from a clean exit</li><li><b>Expected fields must be non-zero</b>: one early run finished cleanly but left velocity at exactly zero, and this check caught it</li><li><b>No invented numbers</b>: AI agents write input decks and read logs. They never produce a stress or displacement themselves</li><li><b>Saved runs</b>: every kept example stores its inputs, mesh and results so it can be re-run</li></ul></aside></div>
+<div class="hero-shot frame"><span class="tag">VIEW B2</span><img src="img/fea-full.jpg" alt="Von Mises stress contour on an L bracket with a gusset, deformed mesh over the gray undeformed shape"></div>
+<div class="cols"><div class="prose"><h2>What you are looking at</h2><p>A gusseted angle bracket under load. Colors are von Mises stress. The gray shape is the undeformed part and the colored mesh is the deformed part, exaggerated so the motion is visible. The mesh edges are drawn on purpose, so a reviewer can judge whether the mesh is fine enough where the stress is high.</p><p>The image is rendered off-screen by a script straight from the solver's result file. Nothing in it is drawn by hand.</p><h2>The pipeline</h2><p>Geometry comes from Onshape, a STEP file or an STL. Gmsh builds a tetrahedral mesh. CalculiX solves it, and PyVista renders the result. The engineer picks the material, the fixed faces, the loaded faces and the load direction, either by axis band or by clicking real CAD faces.</p><p>The same orchestration drives Code_Aster, Elmer and FreeFEM for structural work and OpenFOAM and Code_Saturne for flow. Each was run on a known reference case first: a published Code_Aster benchmark, a FreeFEM cantilever compared with beam theory, and the standard OpenFOAM pitzDaily tutorial.</p></div><aside class="side"><h2>Rules the pipeline follows</h2><ul><li><b>Read the log</b>: convergence is checked in the solver log, not assumed from a clean exit</li><li><b>Expected fields must be non-zero</b>: one early run finished cleanly but left velocity at exactly zero, and this check caught it</li><li><b>No invented numbers</b>: AI agents write input decks and read logs. They never produce a stress or displacement themselves</li><li><b>Saved runs</b>: every kept example stores its inputs, mesh and results so it can be re-run</li></ul></aside></div>
 
 </div>
+<!-- kjlabs:body:end -->
 <nav class="dnav"><a href="showcase.html">← Back to overview</a><span class="pn"><a href="view-duct.html">← Interactive 3D duct designer</a><a href="view-cad.html">Pick the faces, not a guess →</a></span></nav>
+<div class="pagestamp" role="contentinfo" title="Page revision, for before/after comparison"><span>view-fea.html</span><span>v0.28.20</span><span>64206db9fe84</span><span>2026-10-08</span></div>
 </div></div>
 
 </body></html>
