@@ -48,6 +48,40 @@
       <tr><td>Risks</td><td>The assumptions that would end the business if wrong, and the cheapest test of each.</td><td>Whether the market wants the assurance product as much as the design product.</td></tr>
     </tbody>
   </table></div>
+  <div class="legend" aria-label="Chart key" style="margin-top:24px">
+    <span><i style="border-color:#2563eb;background:#dbeafe"></i>Block of the plan</span>
+    <span><i style="border-color:#d97706;background:#fef3c7"></i>Decision</span>
+    <span><i style="border-color:#dc2626;background:#fee2e2"></i>What could end it</span>
+  </div>
+  <div class="chart-big"><pre class="mermaid">
+flowchart TB
+  subgraph KNOW[What we must understand]
+    P[Problem: what it costs today]:::act
+    C[Customer: who signs, who uses]:::act
+  end
+  subgraph SELL[What we would sell]
+    O[Offer: what is delivered]:::act
+    PR{Pricing hypothesis}:::dec
+    CH[Channel to the first customers]:::act
+  end
+  subgraph RUN[What it takes to run]
+    CO[Cost to serve one more customer]:::act
+    M{Milestones with exit criteria}:::dec
+    F[Funding path]:::act
+  end
+  RK[Risks: the assumptions that would end it]:::warn
+  P --> C --> O --> PR --> CH --> CO --> M --> F
+  RK -.-> M
+  style KNOW fill:#fbfbf9,stroke:#c9cec9,color:#5b6560
+  style SELL fill:#fbfbf9,stroke:#c9cec9,color:#5b6560
+  style RUN fill:#fbfbf9,stroke:#c9cec9,color:#5b6560
+  classDef act fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#0f172a
+  classDef dec fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#422006
+  classDef warn fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#450a0a
+  </pre></div>
+  <p class="srcnote" style="margin-top:10px">The nine blocks in the order they have to be answered, grouped by what
+  they are for. The plan itself is the answers; the risks are the blocks that would invalidate them, which is why
+  they feed back into the milestones rather than sit at the end.</p>
 </section>
 
 <section>
@@ -80,6 +114,29 @@
       </ul>
     </aside>
   </div>
+  <div class="legend" aria-label="Chart key" style="margin-top:24px">
+    <span><i style="border-color:#2563eb;background:#dbeafe"></i>An input we must measure</span>
+    <span><i style="border-color:#d97706;background:#fef3c7"></i>Decision</span>
+    <span><i style="border-color:#16a34a;background:#dcfce7"></i>Outcome</span>
+  </div>
+  <div class="chart-big"><pre class="mermaid">
+flowchart LR
+  A[Subscribing firms]:::act --> REV[Annual revenue]:::dec
+  B[Engagements and their scope]:::act --> REV
+  C[Support hours per active user]:::act --> COST[Cost to serve]:::dec
+  D[Jurisdictions kept current]:::act --> COST
+  E[Compute cost per solve]:::act --> COST
+  REV --> M{Does revenue clear the cost?}:::dec
+  COST --> M
+  M -->|yes| OK[Worth continuing to the next stage]:::res
+  M -->|no| FIX[Change the offer, the scope or the price]:::dec
+  classDef act fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#0f172a
+  classDef dec fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#422006
+  classDef res fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#052e16
+  </pre></div>
+  <p class="srcnote" style="margin-top:10px">The arithmetic as structure rather than numbers: which quantities the
+  revenue and the cost to serve each depend on. Every box on the left is something this page deliberately leaves
+  blank until it has been measured or quoted.</p>
 </section>
 
 <section>
@@ -97,6 +154,30 @@
   </table></div>
   <div class="caveat" style="margin-top:20px"><p>These gates are ordered by dependency, not by schedule. No stage
   is estimated in weeks or dollars on this page.</p></div>
+  <div class="legend" aria-label="Chart key" style="margin-top:24px">
+    <span><i style="border-color:#7c3aed;background:#ede9fe"></i>Start and finish</span>
+    <span><i style="border-color:#2563eb;background:#dbeafe"></i>Stage</span>
+    <span><i style="border-color:#16a34a;background:#dcfce7"></i>Exit condition met</span>
+    <span><i style="border-color:#dc2626;background:#fee2e2"></i>Gate not passed</span>
+  </div>
+  <div class="chart-big"><pre class="mermaid">
+flowchart TB
+  S0([From the frame above]):::start --> S1[Validation]:::act
+  S1 -->|a third party reproduces a published case| S2[First paid pilot]:::act
+  S2 -->|the deliverable is used in a real decision| S3[Repeatable delivery]:::act
+  S3 -->|a second customer, same scope, no new engineering| S4[Productised assurance]:::act
+  S4 -->|one jurisdiction cited and independently reviewed| S5[Partnership]:::act
+  S5 -->|a co-funded research question with a testable result| DONE([A business, not a project]):::res
+  S1 -.->|not met| HOLD[Stay at this stage]:::warn
+  classDef start fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#1e1b4b
+  classDef act fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#0f172a
+  classDef res fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#052e16
+  classDef warn fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#450a0a
+  </pre></div>
+  <p class="srcnote" style="margin-top:10px">Read it left to right: the labels on the arrows are the exit conditions
+  from the table above, so each stage is only finished when someone other than us can judge that the condition is
+  met. The dashed path applies at every gate, not only the one it is drawn from &mdash; a gate that is not passed
+  keeps the work at the stage it is already on.</p>
 </section>
 
 <section>
@@ -109,10 +190,28 @@
   </div>
   <div class="caveat" style="margin-top:24px"><p><b>Repetition, on purpose.</b> This page is aspirational. It is
   published to be corrected by an advisor, not to be believed as a plan.</p></div>
+  <div class="legend" aria-label="Chart key" style="margin-top:24px">
+    <span><i style="border-color:#d97706;background:#fef3c7"></i>The question to put to an advisor</span>
+    <span><i style="border-color:#2563eb;background:#dbeafe"></i>Where each answer points</span>
+  </div>
+  <div class="chart-big"><pre class="mermaid">
+flowchart TB
+  Q1{Who feels the pain, and who holds the budget?}:::dec -->|the facility| A1[A site licence, or a scoped engagement]:::act
+  Q1 -->|the engineer or their firm| A2[A per-seat tool]:::act
+  Q2{Service first, or product first?}:::dec -->|service| B1[Revenue sooner, and it teaches the product]:::act
+  Q2 -->|product| B2[Distribution is the blocker, not the build]:::act
+  Q3{Wedge, or upsell?}:::dec -->|assurance leads| C1[Compliance evidence is the entry point]:::act
+  Q3 -->|design leads| C2[Design wins, and assurance expands later]:::act
+  classDef dec fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#422006
+  classDef act fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#0f172a
+  </pre></div>
+  <p class="srcnote" style="margin-top:10px">Three forks, each with a different business behind it. We have not
+  chosen any of them on this page: the point of the meeting is to be argued out of the wrong one early.</p>
 </section>
 
 </div>
 <nav class="dnav"><a href="showcase.html">← Back to overview</a><span class="pn"><a href="intro.html">Introduction</a><a href="briefing.html">The idea in brief</a><a href="landscape.html">Market &amp; competition</a><a href="research.html">University R&amp;D</a><a href="plan.html" aria-current="page">Illustrative plan</a></span></nav>
 </div></div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.15.0/mermaid.min.js" integrity="sha512-HH52omhHpZF6RfVnGiQwYgYm4H/ya2xsZYLl5xJ4+tLfX+rN4+8zF7V/H/KLeicPrKZYi1g6iBmVkk2AhXTGlg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>(function(){var d=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches;var t=document.documentElement.getAttribute("data-theme");if(t)d=t==="dark";if(window.mermaid)mermaid.initialize({startOnLoad:true,theme:d?"dark":"default",securityLevel:"strict"});})();</script>
 </body></html>
