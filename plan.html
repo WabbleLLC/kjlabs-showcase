@@ -5,8 +5,8 @@
 <meta property="og:title" content="How a plan would be framed. Not a plan. · KJLabs">
 <meta property="og:description" content="Public briefing material for KJLabs Simulators and CompliSpec: engineering simulation and code-compliance tools for grain handling and dust collection.">
 <meta name="kjlabs-page" content="plan.html">
-<meta name="kjlabs-version" content="0.28.20">
-<meta name="kjlabs-page-hash" content="d54c51f776ef">
+<meta name="kjlabs-version" content="0.28.21">
+<meta name="kjlabs-page-hash" content="b3bcc01084f8">
 <meta name="kjlabs-built" content="2026-10-08">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -47,9 +47,9 @@
       <tr><td>Offer</td><td>What is delivered, in what unit, with what the customer gets that they cannot get from a spreadsheet.</td><td>Whether the first offer is a service, a seat, a site license, or an evidence package.</td></tr>
       <tr><td>Pricing hypothesis</td><td>How value is anchored &mdash; per seat, per facility, per project, or per review cycle.</td><td>Willingness to pay, tested against a real alternative price: the consultant, the spreadsheet, or nothing.</td></tr>
       <tr><td>Channel</td><td>How the first ten customers hear about it.</td><td>Whether that is equipment manufacturers, engineering firms, co-ops and elevators directly, or university and extension networks.</td></tr>
-      <tr><td>Cost structure</td><td>The recurring cost of serving one more customer, and the fixed cost of keeping the tools honest.</td><td>Support load, validation and re-verification effort per jurisdiction, and hosting cost per solve.</td></tr>
+      <tr><td>Cost structure</td><td>The recurring cost of serving one more customer, and the fixed cost of keeping the tools honest.</td><td>Support load, validation and re-verification effort per jurisdiction, hosting cost per solve, and which current editions of the cited standards the customer licenses for us rather than us buying them.</td></tr>
       <tr><td>Milestones</td><td>Stage gates with entry and exit criteria, not dates.</td><td>Which gate is the real one: first paid pilot, first repeat customer, or first jurisdiction encoded end to end.</td></tr>
-      <tr><td>Funding path</td><td>What the next stage costs and which non-dilutive, customer or partner money could cover it.</td><td>Eligibility, timing and cost share for each program &mdash; none of which is verified on this page.</td></tr>
+      <tr><td>Funding path</td><td>What the next stage costs and which non-dilutive, customer or partner money could cover it.</td><td>Eligibility, timing and cost share for each program &mdash; none of which is verified on this page &mdash; and whether standards access is ours to buy or comes with the engagement.</td></tr>
       <tr><td>Risks</td><td>The assumptions that would end the business if wrong, and the cheapest test of each.</td><td>Whether the market wants the assurance product as much as the design product.</td></tr>
     </tbody>
   </table></div>
@@ -153,7 +153,8 @@ flowchart LR
       <tr><td>Validation</td><td>A third party reproduces a duct-loss result from a case we publish, including the caveat, and gets the same answer.</td></tr>
       <tr><td>First paid pilot</td><td>One facility pays for a defined scope, and the deliverable is used in a real decision.</td></tr>
       <tr><td>Repeatable delivery</td><td>A second customer of the same type receives the same scope without new engineering for each one.</td></tr>
-      <tr><td>Productised assurance</td><td>One jurisdiction's rules are encoded, cited, independently reviewed, and a customer relies on the output in a review.</td></tr>
+      <tr><td>Sources and counsel</td><td>Written advice on licensing and liability is in hand, and we hold current editions of every standard the product cites &mdash; or the engagement says in writing that the customer supplies them.</td></tr>
+      <tr><td>Productized assurance</td><td>One jurisdiction's rules are encoded, cited, independently reviewed, and a customer relies on the output in a review.</td></tr>
       <tr><td>Partnership</td><td>A university or equipment partner co-funds a defined research question with a publishable or testable result.</td></tr>
     </tbody>
   </table></div>
@@ -170,7 +171,8 @@ flowchart TB
   S0([From the frame above]):::start --> S1[Validation]:::act
   S1 -->|a third party reproduces a published case| S2[First paid pilot]:::act
   S2 -->|the deliverable is used in a real decision| S3[Repeatable delivery]:::act
-  S3 -->|a second customer, same scope, no new engineering| S4[Productised assurance]:::act
+  S3 -->|a second customer, same scope, no new engineering| S3B[Sources and counsel]:::act
+  S3B -->|advice in hand, current sources licensed or customer-supplied| S4[Productized assurance]:::act
   S4 -->|one jurisdiction cited and independently reviewed| S5[Partnership]:::act
   S5 -->|a co-funded research question with a testable result| DONE([A business, not a project]):::res
   S1 -.->|not met| HOLD[Stay at this stage]:::warn
@@ -182,7 +184,8 @@ flowchart TB
   <p class="srcnote" style="margin-top:10px">Read it left to right: the labels on the arrows are the exit conditions
   from the table above, so each stage is only finished when someone other than us can judge that the condition is
   met. The dashed path applies at every gate, not only the one it is drawn from &mdash; a gate that is not passed
-  keeps the work at the stage it is already on.</p>
+  keeps the work at the stage it is already on. Sources and counsel sits where it does on purpose: the assurance
+  product cannot be sold before the licensing and liability position is written down.</p>
 </section>
 
 <section>
@@ -217,7 +220,7 @@ flowchart TB
 </div>
 <!-- kjlabs:body:end -->
 <nav class="dnav"><a href="showcase.html">← Back to overview</a><span class="pn"><a href="intro.html">Introduction</a><a href="briefing.html">The idea in brief</a><a href="landscape.html">Market &amp; competition</a><a href="research.html">University R&amp;D</a><a href="plan.html" aria-current="page">Illustrative plan</a></span></nav>
-<div class="pagestamp" role="contentinfo" title="Page revision, for before/after comparison"><span>plan.html</span><span>v0.28.20</span><span>d54c51f776ef</span><span>2026-10-08</span></div>
+<div class="pagestamp" role="contentinfo" title="Page revision, for before/after comparison"><span>plan.html</span><span>v0.28.21</span><span>b3bcc01084f8</span><span>2026-10-08</span></div>
 </div></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.15.0/mermaid.min.js" integrity="sha512-HH52omhHpZF6RfVnGiQwYgYm4H/ya2xsZYLl5xJ4+tLfX+rN4+8zF7V/H/KLeicPrKZYi1g6iBmVkk2AhXTGlg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>(function(){var d=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches;var t=document.documentElement.getAttribute("data-theme");if(t)d=t==="dark";if(window.mermaid)mermaid.initialize({startOnLoad:true,theme:d?"dark":"default",securityLevel:"strict"});})();</script>
